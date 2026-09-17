@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, projects } from "@/lib/projects";
+import { SiteNav } from "@/components/site-nav";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -24,14 +25,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const nextProject = projects[(currentIndex + 1) % projects.length];
 
   return (
-    <main>
-      <nav className="site-nav">
-        <Link className="brand" href="/" aria-label="Kiran A home">K<span>.</span>A</Link>
-        <Link className="back-link" href="/#work">← Back to work</Link>
-        <a className="availability" href="mailto:kirananandan24@gmail.com">
-          <span className="pulse" /> Available for work
-        </a>
-      </nav>
+    <main id="main-content">
+      <SiteNav backToWork />
 
       <article className={`case-study section-wrap ${project.accent}`}>
         <header className="case-header">

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { projects } from "@/lib/projects";
+import { SiteNav } from "@/components/site-nav";
+import { AiToolFlow } from "@/components/ai-tool-flow";
 
 const skillGroups = [
   ["Frontend", "React", "Next.js", "TypeScript", "Tailwind CSS"],
@@ -10,22 +12,11 @@ const skillGroups = [
 
 export default function Home() {
   return (
-    <main>
-      <nav className="site-nav">
-        <a className="brand" href="#top" aria-label="Kiran A home">
-          K<span>.</span>A
-        </a>
-        <div className="nav-links">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <a className="availability" href="mailto:kirananandan24@gmail.com">
-          <span className="pulse" /> Available for work
-        </a>
-      </nav>
+    <main id="main-content">
+      <SiteNav />
 
       <section className="hero section-wrap" id="top">
+        <AiToolFlow />
         <div className="hero-meta">
           <span>Software developer</span>
           <span>Chennai, India / 2026</span>
@@ -37,14 +28,36 @@ export default function Home() {
             <br />
             digital things<span className="accent-dot">.</span>
           </h1>
+          <div className="profile-links reveal reveal-delay">
+            <a href="/Kiran_A_Resume_12-09-2026.pdf" download>
+              <span>Resume</span><b>↓</b>
+            </a>
+            <a href="#skills">
+              <span>Focus</span><b>↘</b>
+            </a>
+            <a href="https://github.com/Kirananandan" target="_blank" rel="noreferrer">
+              <span>GitHub</span><b>↗</b>
+            </a>
+            <a href="https://www.linkedin.com/in/kiran-a-06b349338/" target="_blank" rel="noreferrer">
+              <span>LinkedIn</span><b>↗</b>
+            </a>
+            <a href="https://leetcode.com/u/kiran_Ak46/" target="_blank" rel="noreferrer">
+              <span>LeetCode</span><b>↗</b>
+            </a>
+          </div>
           <div className="hero-bottom reveal reveal-delay-2">
             <p>
               I&apos;m Kiran, a software developer focused on thoughtful
               interfaces, reliable systems and products that feel good to use.
             </p>
-            <a className="circle-link" href="#work" aria-label="Scroll to selected work">
-              <span>↓</span>
-            </a>
+            <div className="hero-actions">
+              <a className="hire-button" href="mailto:kirananandan24@gmail.com?subject=Hiring%20inquiry%20for%20Kiran%20A">
+                Hire me <span>↗</span>
+              </a>
+              <a className="circle-link" href="#work" aria-label="Scroll to selected work">
+                <span>↓</span>
+              </a>
+            </div>
           </div>
         </div>
         <div className="hero-orbit" aria-hidden="true">
@@ -132,7 +145,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="skills section-wrap">
+      <section className="skills section-wrap" id="skills">
         <div className="section-heading">
           <p className="eyebrow">Toolkit</p>
           <span>Always learning</span>
@@ -149,6 +162,28 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="credentials section-wrap">
+        <div className="section-heading">
+          <p className="eyebrow">Credentials</p>
+          <span>(02 areas)</span>
+        </div>
+        <div className="credentials-grid">
+          <div className="credential-block">
+            <p className="eyebrow">Education</p>
+            <h2>B.Tech, Information Technology</h2>
+            <p>Ganadipathy Tulsi&apos;s Jain Engineering College, Vellore</p>
+            <strong>CGPA: 8.0</strong>
+          </div>
+          <div className="credential-block">
+            <p className="eyebrow">Certifications</p>
+            <ul>
+              <li><span>01</span> Java Full Stack — Besant Technologies</li>
+              <li><span>02</span> GCP Essentials &amp; Data Analytics — Google / Coursera</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section className="contact section-wrap" id="contact">
         <p className="eyebrow">Have a project in mind?</p>
         <h2>
@@ -159,13 +194,19 @@ export default function Home() {
         <a className="email-link" href="mailto:kirananandan24@gmail.com">
           kirananandan24@gmail.com <span>↗</span>
         </a>
+        <div className="contact-network">
+          <a href="https://github.com/Kirananandan" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/kiran-a-06b349338/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a href="/Kiran_A_Resume_12-09-2026.pdf" download>Download resume ↓</a>
+        </div>
       </section>
 
       <footer className="footer section-wrap">
         <span>© 2026 Kiran A</span>
         <div>
           <a href="https://github.com/Kirananandan" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/kiran-a-06b349338/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="/Kiran_A_Resume_12-09-2026.pdf" download>Resume</a>
           <a href="#top">Back to top ↑</a>
         </div>
       </footer>
